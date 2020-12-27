@@ -20,7 +20,6 @@ class attract:
         center = self.attributes['position'].data[0]
         range_ = self.attributes['range'].data[0][0]
         multiplier = self.attributes['multiplier'].data[0][0]
-        print('asdasw')
         for x in range(len(particles.particles)):
             # print(x)
             distance = math.sqrt(
@@ -33,7 +32,6 @@ class attract:
                 (reference.data[0][0] + stf(center[0])),
                 (reference.data[0][1] + stf(center[0]))
                 ]])
-                print(attr)
                 if attr.data[0][0] != 0 or attr.data[0][1] != 0:
                     attr.normalize()
                     attr.data[0][0] *= 1/framerate*stf(multiplier)*(-1)

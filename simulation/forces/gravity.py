@@ -17,4 +17,3 @@ class gravity:
         for x in particles.particles:
             x.velocity.data[0][0] -= stf(self.attributes['force'].data[0][0])/framerate
             x.velocity.data[0][1] -= stf(self.attributes['force'].data[0][1])/framerate
-            print('xss')

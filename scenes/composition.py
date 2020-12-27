@@ -54,7 +54,6 @@ class composition:
                 self.display.change_scene(self.playback)
             else:
                 return
-            print(self.framerate)
 
 c = composition()
 c.run()

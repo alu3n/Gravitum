@@ -16,9 +16,8 @@ class playback(scene):
         super().__init__()
         self.cam = camera()
         self.loaded = False
-        
+
     def load(self):
-        print('test')
         self.data = load()
         self.loaded = True
         self.player = player(self.data.particles)
@@ -29,6 +28,5 @@ class playback(scene):
         self.cam.update(screen,event)
         if self.loaded:
             self.player.next(screen,self.cam)
-            print('x')
 
         return(super().run(event,screen,data))
