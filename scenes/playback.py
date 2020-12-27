@@ -15,7 +15,8 @@ class playback(scene):
     def __init__(self):
         super().__init__()
         self.cam = camera()
-
+        self.loaded = False
+        
     def load(self):
         print('test')
         self.data = load()

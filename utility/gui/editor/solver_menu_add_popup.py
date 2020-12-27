@@ -12,7 +12,7 @@ class add_popup:
         self.width = 200
         self.item_height = 30
 
-        self.items = ['source','drag','gravity','noise','vortex','cancel']
+        self.items = ['source','drag','gravity','noise','vortex','attract','cancel']
         self.buttons = []
         for x in range(len(self.items)):
             self.buttons.append(button(self.items[x],Matrix([[self.width,self.item_height]]),Matrix([[0,0]]),self.items[x],font_size=14))

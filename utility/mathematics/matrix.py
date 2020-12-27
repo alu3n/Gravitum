@@ -1,4 +1,11 @@
+import os
+import sys
+import pygame as pg
+
 import math
+
+sys.path.insert(1,os.getcwd())
+
 from utility.str_to_float import stf
 
 class Matrix:
@@ -27,8 +34,8 @@ class Matrix:
         return ''
 
     def __add__(self, other):
-        if len(self.data) != len(other.data) or len(self.data[1]) != len(other.data[1]):
-            raise Exception('Different matrix size')
+        # if len(self.data) != len(other.data) or len(self.data[1]) != len(other.data[1]):
+        #     raise Exception('Different matrix size')
 
         res = []
         for x in range(len(self.data)):
@@ -75,3 +82,9 @@ class Matrix:
         for x in self.data[0]:
             temp.append(stf(x))
         return temp
+
+    def magnitude(self):
+        return math.sqrt(self.data[0][0]**2+self.data[0][1]**2)
+
+    def normalize(self):
+        return Matrix([[self.data[0][0]/self.magnitude(),self.data[0][1]/self.magnitude()]])

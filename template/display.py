@@ -67,20 +67,3 @@ class display:
                 return status
             else:
                 self.update(None,data)
-            # else:
-            #     for event in pg.event.get():
-            #         if event.type == pg.QUIT:
-            #             pg.quit()
-            #             sys.exit()
-            #             return
-            #         status = self.update(event,data)
-            #     if status != None:
-            #         return status
-
-
-# print(os.getcwd())
-#
-# sc = editor()
-#
-# t = display(Matrix([[960,560]]),60,'Gravitum', sc)
-# t.run()

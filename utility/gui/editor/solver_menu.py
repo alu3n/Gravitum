@@ -18,6 +18,7 @@ from simulation.forces.gravity import gravity
 from simulation.forces.drag import drag
 from simulation.forces.source import source
 from simulation.forces.noise import noise
+from simulation.forces.attract import attract
 from simulation.forces.vortex import vortex
 from simulation.forces.parameters import parameters
 
@@ -38,8 +39,6 @@ class solver_menu:
 
         self.solver_properties = solver_properties(data,self.selected,screen)
 
-
-        # self.test_txbx = textbox(150,30,data.solvers[0],'force',0)
 
     def update_buttons(self,screen):
         pass
@@ -88,6 +87,8 @@ class solver_menu:
                     data.solvers.append(noise())
                 elif val_popup == 'vortex':
                     data.solvers.append(vortex())
+                elif val_popup == 'attract':
+                    data.solvers.append(attract())
                 self.adding = False
                 # for x in data.solvers[1].attributes:
                 #     print(data.solvers[1].attributes[x].data[0][0])

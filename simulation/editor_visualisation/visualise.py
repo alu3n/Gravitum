@@ -10,10 +10,12 @@ from simulation.camera import camera
 from simulation.forces.source import source
 from simulation.forces.noise import noise
 from simulation.forces.vortex import vortex
+from simulation.forces.attract import attract
 
 from simulation.editor_visualisation.viz_source import source_viz
 from simulation.editor_visualisation.viz_noise import viz_noise
 from simulation.editor_visualisation.viz_vortex import viz_vortex
+from simulation.editor_visualisation.viz_attract import attract_viz
 
 
 from utility.str_to_float import stf
@@ -35,6 +37,11 @@ class visualise:
                 stf(x.attributes['range'].data[0][0]),
                 stf(x.attributes['speed'].data[0][0])
                 )
+            if type(x) == type(attract()):
+                attract_viz([stf(x.attributes['position'].data[0][0]),
+                -stf(x.attributes['position'].data[0][1])],
+                self.camera,
+                screen,stf(x.attributes['range'].data[0][0]))
         for x in data.solvers:
             # print(type(x))
             if type(x) == type(source()):

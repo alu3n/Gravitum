@@ -15,6 +15,7 @@ from simulation.forces.drag import drag
 from simulation.forces.source import source
 from simulation.forces.noise import noise
 from simulation.forces.vortex import vortex
+from simulation.forces.attract import attract
 from simulation.forces.parameters import parameters
 
 from utility.io.save import save
@@ -38,6 +39,12 @@ class sim_runner:
                 if type(x) == type(source()):
                     x.source(self.particles)
                 if type(x) == type(gravity()):
+                    x.apply(self.particles,self.framerate)
+                if type(x) == type(drag()):
+                    x.apply(self.particles,self.framerate)
+                if type(x) == type(vortex()):
+                    x.apply(self.particles,self.framerate)
+                if type(x) == type(attract()):
                     x.apply(self.particles,self.framerate)
             new = []
             for x in range(len(self.particles.particles)):
