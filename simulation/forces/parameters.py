@@ -11,5 +11,7 @@ class parameters:
     def __init__(self):
         self.type = 'parameters'
         self.attributes = {'framerate':Matrix([['24']]),
-        'frames':Matrix([['120']])
+        'frames':Matrix([['240']]),
+        'export resolution':Matrix([['1920','1080']]),
+        'export background color':Matrix([['0','0','0']])
         }

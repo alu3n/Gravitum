@@ -37,4 +37,3 @@ class attract:
                     attr.data[0][0] *= 1/framerate*stf(multiplier)*(-1)
                     attr.data[0][1] *= 1/framerate*stf(multiplier)*(-1)
                     particles.particles[x].velocity += attr
-                    print('123')

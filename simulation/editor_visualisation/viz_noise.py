@@ -9,8 +9,8 @@ from utility.mathematics.matrix import Matrix
 
 
 def viz_noise(screen, noise, camera):
-    for x in noise.field:
-        center = [camera.x+x.pos.data[0][0]*camera.scale,camera.y-x.pos.data[0][1]*camera.scale]
-        pointer = [center[0]+x.direction.data[0][0]*camera.scale*stf(noise.attributes['multiplier'].data[0][0]),center[1]+x.direction.data[0][1]*camera.scale*stf(noise.attributes['multiplier'].data[0][0])]
-        # pg.draw.circle(screen,[144,144,255],center,1)
-        pg.draw.line(screen, [222,99,99], center, pointer,1)
+    if noise.active:
+        for x in noise.field:
+            center = [camera.x+x.pos.data[0][0]*camera.scale,camera.y-x.pos.data[0][1]*camera.scale]
+            pointer = [center[0]+x.direction.data[0][0]*camera.scale*stf(noise.attributes['multiplier'].data[0][0]),center[1]+x.direction.data[0][1]*camera.scale*stf(noise.attributes['multiplier'].data[0][0])]
+            pg.draw.line(screen, [222,99,99], center, pointer,1)

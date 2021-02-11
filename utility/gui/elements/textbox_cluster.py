@@ -13,7 +13,6 @@ class multibox:
 
 class textbox_cluster:
     def __init__(self):
-        pass
         self.loaded = False
 
 

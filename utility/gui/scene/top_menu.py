@@ -22,6 +22,7 @@ class top_menu:
 
     def update(self, screen, event):
         self.update_buttons(screen)
+        pg.draw.rect(screen,[38,38,38],(0,0,screen.get_size()[0],40))
         for x in self.buttons:
             val = x.update(screen, event)
             if val != None:

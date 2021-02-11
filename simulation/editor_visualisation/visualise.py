@@ -17,13 +17,14 @@ from simulation.editor_visualisation.viz_noise import viz_noise
 from simulation.editor_visualisation.viz_vortex import viz_vortex
 from simulation.editor_visualisation.viz_attract import attract_viz
 
+from utility.gui.elements.editor_info import editor_info
 
 from utility.str_to_float import stf
 
 class visualise:
     def __init__(self):
         self.camera = camera()
-
+        self.editor_info = editor_info()
     def update(self,data,screen,event):
         self.camera.update(screen, event)
         for x in data.solvers:
@@ -52,4 +53,5 @@ class visualise:
                 screen,stf(x.attributes['range'].data[0][0]),
                 stf(x.attributes['direction'].data[0][0]),
                 stf(x.attributes['spread'].data[0][0]))
+        self.editor_info.update(screen,self.camera.scale,[self.camera.offsetx,self.camera.offsety])
         # self.camera.viz(screen)

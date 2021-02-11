@@ -9,8 +9,8 @@ from template.scene import scene
 from simulation.editor_visualisation.visualise import visualise
 from utility.gui.editor.solver_menu import solver_menu
 from simulation.simulation.load import load
-
 from simulation.simulation.run.sim_runner import sim_runner
+
 # from simulation.run import sim_runner import sim_runner
 
 class editor(scene):
@@ -20,6 +20,7 @@ class editor(scene):
         self.solver_menu = solver_menu(data,screen)
         self.load = load()
 
+
         self.runner = sim_runner()
 
     def run(self,event,screen,data):
@@ -27,9 +28,10 @@ class editor(scene):
         self.visualise.update(data,screen,event)
         self.solver_menu.update(event,screen,data)
 
+
         val = self.load.update(screen,event)
         if val != None:
-            self.runner.run(data)
+            self.runner.run(data,screen)
             return 'playbackload'
 
         return(super().run(event,screen,data))

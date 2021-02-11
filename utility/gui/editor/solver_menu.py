@@ -11,6 +11,7 @@ from utility.gui.editor.solver_menu_add_popup import add_popup
 from utility.gui.editor.solver_menu_solvers import menu_solvers
 from utility.gui.editor.solver_menu_solver_properties import solver_properties
 from utility.gui.elements.textbox_cluster import textbox_cluster
+from utility.gui.editor.move_forces import move_forces
 
 from utility.gui.elements.textbox import textbox
 
@@ -40,12 +41,6 @@ class solver_menu:
         self.solver_properties = solver_properties(data,self.selected,screen)
 
 
-    def update_buttons(self,screen):
-        pass
-
-    def render(self,screen):
-        pass
-
     def update(self,event,screen,data):
         self.run(event,screen,data)
 
@@ -58,7 +53,8 @@ class solver_menu:
         if val_solvers != None:
             self.selected = val_solvers
             self.textbox_cluster.load(data,self.selected)
-            # print(data.solvers[val_solvers].attributes)
+
+        move_forces(event,data,self.selected)
 
         self.textbox_cluster.update(screen,data,event)
 
@@ -69,7 +65,7 @@ class solver_menu:
         elif val == 'remove':
             if self.selected != None:
                 if type(data.solvers[self.selected]) != type(parameters()):
-                    print(type(self.selected))
+                    # print(type(self.selected))
                     self.textbox_cluster.unload()
                     data.solvers.pop(self.selected)
                     self.selected = None
@@ -90,8 +86,3 @@ class solver_menu:
                 elif val_popup == 'attract':
                     data.solvers.append(attract())
                 self.adding = False
-                # for x in data.solvers[1].attributes:
-                #     print(data.solvers[1].attributes[x].data[0][0])
-            # print(data.solvers[0].attributes['multiplier'].data[0][0])
-
-        # self.test_txbx.update(screen,Matrix([[500,500]]),event)

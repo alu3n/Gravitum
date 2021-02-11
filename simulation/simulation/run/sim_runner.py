@@ -18,6 +18,8 @@ from simulation.forces.vortex import vortex
 from simulation.forces.attract import attract
 from simulation.forces.parameters import parameters
 
+from utility.gui.elements.display_frame import display_frame
+
 from utility.io.save import save
 
 
@@ -26,7 +28,7 @@ class sim_runner:
         self.particles = particles()
         self.save = save()
 
-    def run(self,data):
+    def run(self,data,screen):
         self.data = data
 
         self.framerate = int(stf(self.data.solvers[0].attributes['framerate'].data[0][0]))
@@ -35,9 +37,10 @@ class sim_runner:
         self.particles.particles = []
 
         for y in range(int(stf(self.frames))):
+            display_frame(screen,y,'Simulating')
             for x in self.data.solvers:
                 if type(x) == type(source()):
-                    x.source(self.particles)
+                    x.source(self.particles,y)
                 if type(x) == type(gravity()):
                     x.apply(self.particles,self.framerate)
                 if type(x) == type(drag()):
@@ -45,6 +48,8 @@ class sim_runner:
                 if type(x) == type(vortex()):
                     x.apply(self.particles,self.framerate)
                 if type(x) == type(attract()):
+                    x.apply(self.particles,self.framerate)
+                if type(x) == type(noise()):
                     x.apply(self.particles,self.framerate)
             new = []
             for x in range(len(self.particles.particles)):

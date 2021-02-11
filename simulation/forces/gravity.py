@@ -11,7 +11,8 @@ from utility.mathematics.matrix import Matrix
 class gravity:
     def __init__(self):
         self.type = 'gravity'
-        self.attributes = {'force':Matrix([['0','-9.81']])}
+        self.attributes = {'force':Matrix([['0','-9.81']]),
+        'test':Matrix([['1','1','1']])}
 
     def apply(self,particles,framerate):
         for x in particles.particles:

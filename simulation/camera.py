@@ -49,3 +49,25 @@ class camera:
             pg.draw.line(screen,color_lines,[0,self.y-x*self.scale*2.5],[screen.get_size()[0],self.y-x*self.scale*2.5])
         pg.draw.line(screen,color_lead_lines,[0,self.y],[screen.get_size()[0],self.y],2)
         pg.draw.line(screen,color_lead_lines,[self.x,0],[self.x,screen.get_size()[1]],2)
+
+    def update_export(self, screen, event):
+        self.x = screen.get_size()[0]/2+self.offsetx
+        self.y = screen.get_size()[1]/2+self.offsety
+        if event != None:
+            if event.type == pg.KEYDOWN:
+                # print(event)
+                if event.unicode == '':
+                    pass
+                elif event.unicode in 'q':
+                    if self.scale != 1:
+                        self.scale -= 1
+                elif event.unicode in 'e':
+                    self.scale += 1
+                elif event.unicode in 's':
+                    self.offsety += self.scale
+                elif event.unicode in 'w':
+                    self.offsety -= self.scale
+                elif event.unicode in 'a':
+                    self.offsetx -= self.scale
+                elif event.unicode in 'd':
+                    self.offsetx += self.scale

@@ -58,19 +58,21 @@ class textbox:
                                 # print(self.data_pointer.attributes[self.parameter].data[0][self.index])
                             self.fresh = False
                             if type(self.data_pointer) == type(noise()):
-                                self.data_pointer.fld()
+                                if event.unicode in '-0123456789.':
+                                    self.data_pointer.fld()
                         elif len(self.data_pointer.attributes[self.parameter].data[0][self.index]) == 0:
                             if event.unicode in '-0123456789.':
                                 self.data_pointer.attributes[self.parameter].data[0][self.index] = event.unicode
-                                print(self.data_pointer.attributes[self.parameter].data[0][self.index])
                             if type(self.data_pointer) == type(noise()):
-                                self.data_pointer.fld()
+                                if event.unicode in '-0123456789.':
+                                    self.data_pointer.fld()
                         else:
                             if event.unicode != '.' or event.unicode not in self.data_pointer.attributes[self.parameter].data[0][self.index]:
                                 if event.unicode in '0123456789.':
                                     self.data_pointer.attributes[self.parameter].data[0][self.index] += event.unicode
                             if type(self.data_pointer) == type(noise()):
-                                self.data_pointer.fld()
+                                if event.unicode in '-0123456789.':
+                                    self.data_pointer.fld()
 
 
     def detect_selection(self,event):

@@ -17,9 +17,3 @@ from simulation.forces.parameters import parameters
 class data:
     def __init__(self):
         self.solvers = [parameters(),source(),gravity()]
-
-    def add_solver(self):
-        pass
-
-    def remove_solver(self):
-        pass

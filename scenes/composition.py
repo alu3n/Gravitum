@@ -35,7 +35,12 @@ class composition:
                 self.framerate = 60
                 self.display.change_scene(self.editor)
             elif status == 'export':
-                self.framerate = 60
+                fr = int(stf(self.data.solvers[0].attributes['framerate'].data[0][0]))
+                if fr < 1:
+                    self.framerate = 60
+                else:
+                    self.framerate = 1000
+                self.export.load()
                 self.display.change_scene(self.export)
             elif status == 'playback':
                 fr = int(stf(self.data.solvers[0].attributes['framerate'].data[0][0]))

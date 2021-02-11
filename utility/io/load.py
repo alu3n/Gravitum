@@ -13,4 +13,3 @@ class load:
         for x in data:
             rtv.append(data[x])
         self.particles = rtv
-        print('loaded')

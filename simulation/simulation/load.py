@@ -20,5 +20,4 @@ class load:
     def update(self, screen, event):
         val = self.update_button(screen,event)
         if val != None:
-            # print(val)
             return val
