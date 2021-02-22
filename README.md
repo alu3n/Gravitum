@@ -1,11 +1,40 @@
-Uzivatelska cast
-#Spusteni programu
-Program byl tvoren, pomoci:
-- Python 3.9.0
-- pygame 2.0.0
-Mit nainstalovany pygame 2.0.0 je pro spusteni programu nutnost, python verze 3.9.0 je optimalni.
+# User manual
+## Running Gravitum
+U have to have:
+- pygame 2.0.0 (necessarily)
+- Python 3.9.0 (optimal)
+To start gravitum run main.py
 
-Program se spousti pres soubor main.py
+## Using gravitum
+Gravitum has 3 main parts
+You can use top menu to navigate between them
+### Editor
+There you can setup your simulation and edit export properties.
+
+### Playback
+There you can check the simulatiot (you have to simulate it first for it to be aviable there).
+
+### Export
+There you can move export camera to desired position and export the simulation in .jpg format.
+
+
+### User controls
+Q - Zoom camera out
+E - Zoom camera in
+W - Move camera up
+A - Move camera left
+S - Move camera down
+D - Move camera right
+ARROW KEYS - Move solvers arround (editor only)
+
+### How does it work?
+Gravitum does not create real-time simulations, you have to create solvers, setup your simulation and after that you can hit simulate button. It will run simulation and save cache into your drive. Than you can playback the cache to see if you like it and you can export it eventually
+
+
+# Programmer manual
+
+
+## Spusteni programu
 
 Program je rozdeleny na 3 hlavni uzivatelske casti (editor, playback a export)
 
