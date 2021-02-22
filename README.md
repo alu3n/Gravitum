@@ -30,6 +30,47 @@ ARROW KEYS - Move solvers arround (editor only)
 ### How does it work?
 Gravitum does not create real-time simulations, you have to create solvers, setup your simulation and after that you can hit simulate button. It will run simulation and save cache into your drive. Than you can playback the cache to see if you like it and you can export it eventually
 
+### User interface
+...
+
+### Aviable solvers
+Parameters:
+- Framerate
+- Frames
+- Export resolution
+- Background color
+Source:
+- Position
+- Frequency
+- Direction
+- Spread
+- Range
+- Color min start
+- Color max start
+- Color min end
+- Color max end
+- Velocity
+- Lifespan
+- Size start
+- Size end
+- Active
+Drag:
+- Multiplier
+Gravity:
+- Force
+Noise:
+- Separation
+- Multiplier
+- Range
+Vortex:
+- Position
+- Speed
+- Range
+Attract:
+- Position
+- Multiplier
+- Range
+
 
 # Programmer manual
 
