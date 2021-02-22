@@ -41,23 +41,21 @@ Parameters:
 - Background color
 
 Source:
-- Position
-- Frequency
-- Direction
-- Spread
-- Range
-- Color min start
-- Color max start
-- Color min end
-- Color max end
-- Velocity
-- Lifespan
-- Size start
-- Size end
-- Active
+- Position - Center of the source (x,y)
+- Frequency - How often should particle be spawned, how much particles should be spawned at once (how often, how much)
+- Direction - Direction of source in degrees
+- Spread - Spread of the source in degrees
+- Range - Range of the source
+- Color min start and color max start - particle will have color in this range at the start (it is randomized in that range)
+- Color min end and color max end - particle will have color in this range in the end (it is randomized in that range)
+- Velocity - minimal and maximal velocity (min, max)
+- Lifespan - minimal and maximal lifespan (min, max)
+- Size start - minimal and maximal size at the start (min, max)
+- Size end - minimal and maximal size in the end (min, max)
+- Active - range when is the solver active
 
 Drag:
-- Multiplier
+- Multiplier - 
 
 Gravity:
 - Force
@@ -77,6 +75,7 @@ Attract:
 - Multiplier
 - Range
 
+![alt text]https://ibb.co/x6zCrpv.jpg)
 
 # Programmer manual
 
