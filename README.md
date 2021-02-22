@@ -19,19 +19,19 @@ There you can move export camera to desired position and export the simulation i
 
 
 ### User controls
-Q - Zoom camera out
-E - Zoom camera in
-W - Move camera up
-A - Move camera left
-S - Move camera down
-D - Move camera right
-ARROW KEYS - Move solvers arround (editor only)
+- Q - Zoom camera out
+- E - Zoom camera in
+- W - Move camera up
+- A - Move camera left
+- S - Move camera down
+- D - Move camera right
+- ARROW KEYS - Move solvers arround (editor only)
 
 ### How does it work?
 Gravitum does not create real-time simulations, you have to create solvers, setup your simulation and after that you can hit simulate button. It will run simulation and save cache into your drive. Than you can playback the cache to see if you like it and you can export it eventually
 
 ### User interface
-...
+![Gravitum GUI EDITOR](https://i.ibb.co/sqsmX0S/gravitum-gui.jpg)
 
 ### Aviable solvers
 Parameters:
@@ -55,27 +55,26 @@ Source:
 - Active - range when is the solver active
 
 Drag:
-- Multiplier - 
+- Multiplier - amplify the force
 
 Gravity:
-- Force
+- Force - force vector direction
 
 Noise:
-- Separation
-- Multiplier
-- Range
+- Separation - spacing between 
+- Multiplier - amplify noise vectors
+- Range - how many noise vectors should be in the vector field (there will be that ammount ^2)
 
 Vortex:
-- Position
-- Speed
-- Range
+- Position - center of the vortex force
+- Speed - vortex force amplifier
+- Range - range of the vortex force
 
 Attract:
-- Position
-- Multiplier
-- Range
+- Position - center of the attract force
+- Multiplier - attract force amplifier
+- Range - range of the attract force
 
-![Gravitum GUI](https://i.ibb.co/sqsmX0S/gravitum-gui.jpg)
 
 # Programmer manual
 
