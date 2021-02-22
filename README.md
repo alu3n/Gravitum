@@ -76,6 +76,14 @@ Attract:
 - Multiplier - attract force amplifier
 - Range - range of the attract force
 
+## Exporting simulation as jpg
+Go to the export tab (you need to have simulation cached before you can go there)
+In parameters you can specify export properties:
+- Export resolution in pixels
+- Export background color (R,G,B) 1-255
+- Ammount of simulated frames
+
+Export is sequence of jpg files
 
 # Programmer manual
 ## How does the simulation work?
