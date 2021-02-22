@@ -75,7 +75,7 @@ Attract:
 - Multiplier
 - Range
 
-![alt text]https://ibb.co/x6zCrpv.jpg)
+![alt text]https://i.ibb.co/sqsmX0S/gravitum-gui.jpg
 
 # Programmer manual
 
