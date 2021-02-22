@@ -7,6 +7,10 @@ sys.path.insert(1,os.getcwd())
 
 from utility.mathematics.matrix import Matrix
 
+"""
+Class that is made to save cache to memory
+"""
+
 class save:
     def __init__(self):
         self.frames = {}

@@ -6,6 +6,11 @@ sys.path.insert(1,os.getcwd())
 
 from utility.mathematics.matrix import Matrix
 
+"""
+This class is used to correctly display particle scale and move in space.
+It also has method for creating grid lines.
+"""
+
 class camera:
     def __init__(self):
         self.x = 0
@@ -14,13 +19,15 @@ class camera:
         self.offsetx = 0
         self.offsety = 0
 
-
+    #Normal
     def update(self, screen, event):
         self.x = screen.get_size()[0]/2+self.offsetx
         self.y = screen.get_size()[1]/2+self.offsety
         if event != None:
+
+            #Camera controls
+
             if event.type == pg.KEYDOWN:
-                # print(event)
                 if event.unicode == '':
                     pass
                 elif event.unicode in 'q':
@@ -38,6 +45,7 @@ class camera:
                     self.offsetx += self.scale
         self.viz(screen)
 
+    #Visualise grid lines
     def viz(self,screen):
         color_lines = [40,80,40]
         color_lead_lines = [40,90,40]
@@ -50,12 +58,12 @@ class camera:
         pg.draw.line(screen,color_lead_lines,[0,self.y],[screen.get_size()[0],self.y],2)
         pg.draw.line(screen,color_lead_lines,[self.x,0],[self.x,screen.get_size()[1]],2)
 
+    #Specific for export
     def update_export(self, screen, event):
         self.x = screen.get_size()[0]/2+self.offsetx
         self.y = screen.get_size()[1]/2+self.offsety
         if event != None:
             if event.type == pg.KEYDOWN:
-                # print(event)
                 if event.unicode == '':
                     pass
                 elif event.unicode in 'q':

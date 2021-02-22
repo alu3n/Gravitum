@@ -8,6 +8,11 @@ from utility.gui.elements.display_info import display_info
 
 from utility.mathematics.matrix import Matrix
 
+"""
+This file takes care of playback in the export window
+"""
+
+
 class player:
     def __init__(self,data):
         self.frame = 0
@@ -19,7 +24,6 @@ class player:
         m0 = size[0]/screen.get_size()[0]
         m1 = size[1]/screen.get_size()[1]
         mult = m0*m1
-        # print('x')
         for x in self.data[self.frame%self.max_frame]:
             self.display_info.update(screen,self.frame%self.max_frame,camera.scale,[camera.offsetx,camera.offsety])
             center = [camera.x+x[0][0]*camera.scale/mult,camera.y+x[0][1]*camera.scale/mult]

@@ -22,6 +22,11 @@ from utility.gui.elements.display_frame import display_frame
 
 from utility.io.save import save
 
+"""
+Main simulation happens there
+This class calls all aviable forces and applies them to the particles each frame
+"""
+
 
 class sim_runner:
     def __init__(self):
@@ -29,6 +34,9 @@ class sim_runner:
         self.save = save()
 
     def run(self,data,screen):
+
+        #Attributes from user specified settings
+
         self.data = data
 
         self.framerate = int(stf(self.data.solvers[0].attributes['framerate'].data[0][0]))
@@ -39,6 +47,9 @@ class sim_runner:
         for y in range(int(stf(self.frames))):
             display_frame(screen,y,'Simulating')
             for x in self.data.solvers:
+
+                #Call each solver method to apply its force
+
                 if type(x) == type(source()):
                     x.source(self.particles,y)
                 if type(x) == type(gravity()):
@@ -52,11 +63,16 @@ class sim_runner:
                 if type(x) == type(noise()):
                     x.apply(self.particles,self.framerate)
             new = []
+
+            #Remove dead particles
+
             for x in range(len(self.particles.particles)):
                 if self.particles.particles[x].lifespan.data[0][0] > 1:
                     self.particles.particles[x].update(self.framerate)
                     new.append(self.particles.particles[x])
-            self.particles.particles = new
 
+            #Save particles to the cache file
+
+            self.particles.particles = new
             self.save.load_frame(self.particles,y)
         self.save.save()

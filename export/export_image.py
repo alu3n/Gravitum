@@ -13,6 +13,10 @@ from playback.player import player
 from utility.io.load import load
 from playback.player import player
 
+"""
+This file takes care of image export
+"""
+
 class export:
     def __init__(self):
         self.loaded = False
@@ -24,6 +28,11 @@ class export:
 
 
     def export(self,screen,size,color,camera_):
+
+        """
+        this method creates new screen that is not displayed, its just
+        used to export user specified resolution
+        """
 
         scr = screen
         screen = pg.Surface(size)
@@ -42,9 +51,11 @@ class export:
 
         screen.fill(color)
 
+        #Go through all frames and export each one
+
         for x in range(0,len(self.player.data)):
             display_frame(scr,'{}/{}'.format(x,len(self.player.data)),'Exporting')
             screen.fill(color)
             cam.update_export(screen, None)
-            self.player.next(screen,cam)
+            self.player.next(screen,cam,True)
             pg.image.save(screen, 'images/export{}.png'.format(x))

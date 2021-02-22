@@ -7,6 +7,10 @@ sys.path.insert(1,os.getcwd())
 from utility.mathematics.matrix import Matrix
 from utility.gui.button import button
 
+"""
+This class is used to represent buttons in left solvers menu in the editor scene
+"""
+
 class menu_solvers:
     def __init__(self):
         self.width = 300

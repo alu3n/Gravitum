@@ -8,6 +8,11 @@ sys.path.insert(1,os.getcwd())
 
 from utility.str_to_float import stf
 
+"""
+This class is made to represent data with matrices
+It has basic set of matrix operations, that are used all around the project
+"""
+
 class Matrix:
     def __init__(self, collums):
         l = len(collums[0])
@@ -34,9 +39,6 @@ class Matrix:
         return ''
 
     def __add__(self, other):
-        # if len(self.data) != len(other.data) or len(self.data[1]) != len(other.data[1]):
-        #     raise Exception('Different matrix size')
-
         res = []
         for x in range(len(self.data)):
             tmp = []
@@ -71,6 +73,8 @@ class Matrix:
                 res.append(tmp)
             return Matrix(res)
 
+
+    #Matrix rotation, takes degrees as input, offset is offset from the center to represent affine rotations
     def rotate(self,ammount,offset=[0,0]):
         amt = math.radians(ammount)
         temp = [self.data[0][0]-offset[0],self.data[0][1]-offset[1]]
@@ -83,6 +87,7 @@ class Matrix:
             temp.append(stf(x))
         return temp
 
+    #The two last ops are only for 1*2 matrices
     def magnitude(self):
         return math.sqrt(self.data[0][0]**2+self.data[0][1]**2)
 

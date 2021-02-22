@@ -8,13 +8,14 @@ from utility.mathematics.matrix import Matrix
 from utility.gui.elements.textbox import textbox
 from utility.gui.elements.label import label
 
-class multibox:
-    pass
+
+"""
+This class is made to proceduraly create menu that contains all the solver properties
+"""
 
 class textbox_cluster:
     def __init__(self):
         self.loaded = False
-
 
     def load(self,data,selected):
         self.loaded = True
@@ -23,19 +24,14 @@ class textbox_cluster:
         self.selected = selected
 
         self.buttons = []
-        # print(self.data.solvers[selected])
         for x in self.data.solvers[selected].attributes:
             temp = []
             for y in range(len(self.data.solvers[selected].attributes[x].data[0])):
                 temp.append(textbox(300/len(self.data.solvers[selected].attributes[x].data[0]),20,self.data.solvers[selected],x,y))
-                # print(y)
             self.buttons.append(temp)
-            # print(x)
-        # print(self.buttons)
 
     def unload(self):
         self.loaded = False
-        # print('unload')
 
     def refresh(self,screen,event):
         v = 70
@@ -65,4 +61,3 @@ class textbox_cluster:
     def update(self,screen,data,event):
         if self.loaded:
             self.refresh(screen,event)
-        pass

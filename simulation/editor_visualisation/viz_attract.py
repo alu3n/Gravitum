@@ -2,6 +2,12 @@ import os
 import sys
 import pygame as pg
 
+"""
+This file takes care of attract force visualisation.
+Based on user specified parameters the function renders graphics on screen
+that should help user to better imagine how would his simulation look like.
+"""
+
 sys.path.insert(1,os.getcwd())
 
 from utility.mathematics.matrix import Matrix
@@ -19,4 +25,3 @@ def attract_viz(pos,camera,screen,size):
     text = font.render('Attract', True, [255,255,255])
     textRect = text.get_rect(center=(center[0],center[1]))
     screen.blit(text, textRect)
-    # print('x')

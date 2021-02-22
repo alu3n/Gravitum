@@ -16,6 +16,10 @@ from simulation.forces.attract import attract
 from simulation.forces.vortex import vortex
 from simulation.forces.parameters import parameters
 
+"""
+This function is made to allow user moving solvers with arrow keys.
+"""
+
 def move_forces(event,data,selected):
     if event != None and selected != None:
         if event.type == pg.KEYDOWN:

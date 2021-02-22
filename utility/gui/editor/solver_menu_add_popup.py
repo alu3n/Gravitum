@@ -7,6 +7,11 @@ sys.path.insert(1,os.getcwd())
 from utility.mathematics.matrix import Matrix
 from utility.gui.button import button
 
+"""
+This class is for popup menu - it appears when the user tries to add new solver
+"""
+
+
 class add_popup:
     def __init__(self):
         self.width = 200

@@ -12,6 +12,11 @@ from scenes.editor import editor
 from scenes.export import export
 from scenes.playback import playback
 
+"""
+Display template
+this class is used to simplify display creation
+"""
+
 
 class display:
     def __init__(self,size,framerate,title,scene,minsize=Matrix([[600,400]])):
@@ -35,8 +40,6 @@ class display:
         pg.display.set_caption(title)
 
     def change_scene(self,scene):
-        # if type(scene) != Scene:
-        #     raise Exception('Scene must be scene type')
         self.scene = scene
 
     def update(self,event,data):
@@ -47,7 +50,6 @@ class display:
 
         status = self.scene.run(event,self.screen,data)
         if status != None:
-            # print('x')
             return status
 
         pg.display.flip()

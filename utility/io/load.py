@@ -5,6 +5,10 @@ import json
 
 sys.path.insert(1,os.getcwd())
 
+"""
+Class that is made to load cache from drive
+"""
+
 class load:
     def __init__(self):
         with open('cache/cache.json', 'r') as read_file:

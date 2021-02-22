@@ -6,16 +6,20 @@ sys.path.insert(1,os.getcwd())
 
 from utility.mathematics.matrix import Matrix
 
-# from data.data import data
 
 from template.display import display
 
 from scenes.editor import editor
 from scenes.export import export
 from scenes.playback import playback
-from data.data import data
+from scenes.startup_solvers import data
 
 from utility.str_to_float import stf
+
+"""
+Main scene class
+this class is for switching between scenes (editor, export and playback)
+"""
 
 class composition:
     def __init__(self):
@@ -25,8 +29,9 @@ class composition:
         self.export = export()
         self.playback = playback()
 
-        self.display = display(Matrix([[960,600]]),60,'Gravitum',self.export)
+        self.display = display(Matrix([[960,600]]),60,'Gravitum',self.playback)
         self.editor = editor(self.data,self.display.screen)
+        self.display.change_scene(self.editor)
 
     def run(self):
         while True:
@@ -40,8 +45,8 @@ class composition:
                     self.framerate = 60
                 else:
                     self.framerate = 1000
-                self.export.load()
-                self.display.change_scene(self.export)
+                if self.export.loaded:
+                    self.display.change_scene(self.export)
             elif status == 'playback':
                 fr = int(stf(self.data.solvers[0].attributes['framerate'].data[0][0]))
                 if fr < 1:
@@ -56,6 +61,7 @@ class composition:
                 else:
                     self.framerate = 1000
                 self.playback.load()
+                self.export.load()
                 self.display.change_scene(self.playback)
             else:
                 return

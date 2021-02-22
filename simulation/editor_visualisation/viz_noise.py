@@ -2,6 +2,12 @@ import os
 import sys
 import pygame as pg
 
+"""
+This file takes care of noise visualisation.
+Based on user specified parameters the function renders graphics on screen
+that should help user to better imagine how would his simulation look like.
+"""
+
 sys.path.insert(1,os.getcwd())
 
 from utility.str_to_float import stf

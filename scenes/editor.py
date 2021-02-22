@@ -11,7 +11,9 @@ from utility.gui.editor.solver_menu import solver_menu
 from simulation.simulation.load import load
 from simulation.simulation.run.sim_runner import sim_runner
 
-# from simulation.run import sim_runner import sim_runner
+"""
+Editor program window
+"""
 
 class editor(scene):
     def __init__(self,data,screen):

@@ -23,6 +23,10 @@ from simulation.forces.attract import attract
 from simulation.forces.vortex import vortex
 from simulation.forces.parameters import parameters
 
+"""
+Main class for the solver menu in editor scene
+"""
+
 class solver_menu:
     def __init__(self,data,screen):
         self.width = 300

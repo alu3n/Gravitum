@@ -21,6 +21,12 @@ from utility.gui.elements.editor_info import editor_info
 
 from utility.str_to_float import stf
 
+
+"""
+This file takes care of correctly displaying all solver visualisations
+on screen for the user. Visualisation is used in editor scene.
+"""
+
 class visualise:
     def __init__(self):
         self.camera = camera()
@@ -44,9 +50,7 @@ class visualise:
                 self.camera,
                 screen,stf(x.attributes['range'].data[0][0]))
         for x in data.solvers:
-            # print(type(x))
             if type(x) == type(source()):
-                # print('x')
                 source_viz([stf(x.attributes['position'].data[0][0]),
                 -stf(x.attributes['position'].data[0][1])],
                 self.camera,
@@ -54,4 +58,3 @@ class visualise:
                 stf(x.attributes['direction'].data[0][0]),
                 stf(x.attributes['spread'].data[0][0]))
         self.editor_info.update(screen,self.camera.scale,[self.camera.offsetx,self.camera.offsety])
-        # self.camera.viz(screen)

@@ -11,6 +11,11 @@ from playback.player import player
 from utility.io.load import load
 from playback.player import player
 
+
+"""
+Playback program window
+"""
+
 class playback(scene):
     def __init__(self):
         super().__init__()
@@ -27,6 +32,6 @@ class playback(scene):
         screen.fill([30,60,30])
         self.cam.update(screen,event)
         if self.loaded:
-            self.player.next(screen,self.cam)
+            self.player.next(screen,self.cam,True)
 
         return(super().run(event,screen,data))

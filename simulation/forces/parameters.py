@@ -7,6 +7,12 @@ sys.path.insert(1,os.getcwd())
 
 from utility.mathematics.matrix import Matrix
 
+
+
+#Main simulation parameters
+#Frames = count of simulated frames
+
+
 class parameters:
     def __init__(self):
         self.type = 'parameters'

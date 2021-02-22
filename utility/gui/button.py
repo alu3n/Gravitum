@@ -6,6 +6,10 @@ sys.path.insert(1,os.getcwd())
 
 from utility.mathematics.matrix import Matrix
 
+"""
+Class that is made to represent button
+"""
+
 class button:
     def __init__(self,text,size,position,return_value,font_size=20,font_color=[217,217,217],color_passive=[38,38,38],color_active=[70,130,180]):
         pg.init()

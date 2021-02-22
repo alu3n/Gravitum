@@ -7,6 +7,11 @@ sys.path.insert(1,os.getcwd())
 from utility.mathematics.matrix import Matrix
 from utility.gui.button import button
 
+
+"""
+Top menu that is made to switch between different scenes
+"""
+
 class top_menu:
     def __init__(self):
         self.height = 40

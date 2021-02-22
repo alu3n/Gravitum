@@ -14,6 +14,10 @@ from simulation.forces.vortex import vortex
 
 from utility.gui.button import button
 
+"""
+This class is for representing add and remove solver buttons in editor scene.
+"""
+
 class add_remove:
     def __init__(self,width,height):
         self.width = width

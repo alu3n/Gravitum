@@ -2,6 +2,12 @@ import os
 import sys
 import pygame as pg
 
+"""
+This file takes care of vortex force visualisation.
+Based on user specified parameters the function renders graphics on screen
+that should help user to better imagine how would his simulation look like.
+"""
+
 sys.path.insert(1,os.getcwd())
 
 from utility.mathematics.matrix import Matrix
@@ -9,12 +15,6 @@ from utility.mathematics.matrix import Matrix
 def viz_vortex(pos,camera,screen,size,speed):
 
     center = [camera.x+pos[0]*camera.scale,camera.y+pos[1]*camera.scale]
-
-
-    # pg.draw.line(screen, [0,0,0], center, [l0.data[0][0],l0.data[0][1]],2)
-    # pg.draw.line(screen, [0,0,0], center, [l1.data[0][0],l1.data[0][1]],2)
-    # pg.draw.line(screen, [25,25,25], center, [l2.data[0][0],l2.data[0][1]],2)
-
 
     l0 = Matrix([[center[0],center[1]-size*camera.scale]])
     l1 = Matrix([[center[0]+camera.scale*speed,center[1]-size*camera.scale]])

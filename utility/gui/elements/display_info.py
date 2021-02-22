@@ -4,6 +4,10 @@ import pygame as pg
 
 sys.path.insert(1,os.getcwd())
 
+"""
+Function for displaying information cluster (Frame,position,scale)
+"""
+
 class display_info:
     def __init__(self):
         self.font = pg.font.Font('freesansbold.ttf', 16)

@@ -4,6 +4,9 @@ import pygame as pg
 
 sys.path.insert(1,os.getcwd())
 
+"""
+Simulate button
+"""
 
 from utility.mathematics.matrix import Matrix
 from utility.gui.button import button

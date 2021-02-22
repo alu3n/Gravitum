@@ -8,6 +8,11 @@ from utility.mathematics.matrix import Matrix
 
 from simulation.forces.noise import noise
 
+"""
+This class is made to represent textboxes
+"""
+
+
 class textbox:
     def __init__(self,width,height,data_pointer,parameter,index,border=4):
         pg.init()
@@ -29,11 +34,13 @@ class textbox:
         self.rtrval = None
 
     def update_box(self, screen,position):
+        #updates size and text of textbox
         self.display_text = self.font.render(self.data_pointer.attributes[self.parameter].data[0][self.index], True, [255,255,255])
         self.textRect = self.display_text.get_rect(center=(position.data[0][0],position.data[0][1]))
         self.rect = pg.Rect(position.data[0][0]-self.width/2,position.data[0][1]-self.height/2,self.width,self.height)
 
     def render(self,screen,position):
+        #renders textbox on screen
         if self.selected:
             color = [44,44,44]
         else:
@@ -44,6 +51,7 @@ class textbox:
         screen.blit(self.display_text, self.textRect)
 
     def detect_keys(self,event):
+        #it has some checks to prevent errors
         if self.selected:
             if event != None:
                 if event.type == pg.KEYDOWN:
@@ -95,5 +103,4 @@ class textbox:
 
         if self.rtrval != None:
             self.rtrval = None
-            # print('x')
             return self

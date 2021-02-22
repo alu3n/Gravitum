@@ -6,6 +6,10 @@ sys.path.insert(1,os.getcwd())
 
 from utility.mathematics.matrix import Matrix
 
+"""
+This class is used to represent left solver propertis menu in editor scene
+"""
+
 class solver_properties:
     def __init__(self,data,selected,screen):
         self.width = 300

@@ -4,6 +4,10 @@ import pygame as pg
 
 sys.path.insert(1,os.getcwd())
 
+"""
+Function for displaying frame
+"""
+
 def display_frame(screen, frame, text):
     pg.init()
     font = pg.font.Font('freesansbold.ttf', 30)
