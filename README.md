@@ -39,6 +39,7 @@ Parameters:
 - Frames
 - Export resolution
 - Background color
+
 Source:
 - Position
 - Frequency
@@ -54,18 +55,23 @@ Source:
 - Size start
 - Size end
 - Active
+
 Drag:
 - Multiplier
+
 Gravity:
 - Force
+
 Noise:
 - Separation
 - Multiplier
 - Range
+
 Vortex:
 - Position
 - Speed
 - Range
+
 Attract:
 - Position
 - Multiplier
