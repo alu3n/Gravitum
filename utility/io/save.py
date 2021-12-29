@@ -26,5 +26,5 @@ class save:
         self.frames[str(frame)] = temp
 
     def save(self):
-        with open('cache/cache.json', 'w') as json_file:
+        with open('cache/cache.json', 'w+') as json_file:
             json.dump(self.frames, json_file)
